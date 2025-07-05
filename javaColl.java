@@ -313,6 +313,7 @@ public class javaColl {
 
 
 		//Custom Comparators
+		System.out.println();
 		System.out.println("Custom Comparator");
 		ArrayList<Integer> cl = new ArrayList<>();
 		cl.add(1);
@@ -380,6 +381,8 @@ public class javaColl {
 		 * */
 
 		 //Priority Queue Max Heap 
+		 System.out.println();
+		 System.out.println("Priority Queue as Max Heap");
 		 PriorityQueue<Integer> pqy = new PriorityQueue<>(getComparator());
 		 pqy.offer(8);
 		 pqy.offer(1);
