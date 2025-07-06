@@ -166,6 +166,7 @@ public class StringBasics {
     	   System.out.println();
 
 
+    	   // 6 6 6 6 6 6 6 6 6 6 6 6 
 			//Rotate String
 			/**
 			 * 
@@ -234,6 +235,50 @@ public class StringBasics {
 
 
 
+			// 7 7 7 7 7 7 7 7 7 7 7 7 7 
+			 //Valid Anagram
+			 /**
+			  * 
+			  * Input : s = "anagram" , t = "nagaram"
+
+				Output : true
+			  * 
+			  * Input : s = "dog" , t = "cat"
+
+				Output : false
+			  * 
+			  * */
+			  System.out.println();
+			  System.out.println("Valid Anagram");
+			  String r1 = "dog",r2 = "god";
+			  System.out.println(r1);
+			  System.out.println(r2);
+			  int[] abc = new int[26];
+			  if(r1.length()!= r2.length()){
+			  	System.out.println(false);
+			  }
+			  else{
+			  	for(int i = 0;i<r1.length();i++){
+			  		abc[r1.charAt(i)-'a']++;
+			  	}
+			  	System.out.println(Arrays.toString(abc));
+			  	for(int i = 0;i<r2.length();i++){
+			  		abc[r2.charAt(i)-'a']--;
+			  	}
+			  	System.out.println(Arrays.toString(abc));
+			  	boolean par = true;
+			  	for(int i = 0;i<26;i++){
+			  		if(abc[i]<0 || abc[i]>0){
+			  			System.out.println(false);
+			  			par = false;
+			  			break;
+			  		}	
+			  	}
+			  	if(par == true){
+			  		System.out.println(true);
+			  	}
+			  }
+			  System.out.println();
 
 
 
