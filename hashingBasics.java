@@ -85,10 +85,10 @@ public class hashbasic {
     	  	}
     	  	if(f<maxf && f>secMax){
 	      		secMax = f;
-	   	  		secMaxEle = e;
-	   	  	}
-	   	  	else if(f == secMax){
-	   	  		secMaxEle = Math.min(e,secMaxEle);
+	   	  	secMaxEle = e;
+	   	  }
+	   	else if(f == secMax){
+	   		secMaxEle = Math.min(e,secMaxEle);
     	  	}
 
     	  }
