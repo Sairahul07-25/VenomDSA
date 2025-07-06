@@ -50,6 +50,7 @@ public class StringBasics {
     	 * */
     	 System.out.println("Largest Odd number in the String");
     	 String sn = "76778910000";
+    	 System.out.println(sn);
     	 int onesplace = 0;
     	 int poslast = 0;
     	 for(int i = sn.length()-1;i>=0;i--){
@@ -128,7 +129,109 @@ public class StringBasics {
 
     	  //5 5 5 5 5 5 5 5 5 5 5 
     	  //Isomorphic Strings
-    	  
+    	  /**
+    	   * s1 = egg, s2 = add
+    	   * output true
+    	   * 
+    	   * s1 = title, s2 = paper
+    	   * output true
+    	   * 
+    	   * s1 = apple, s2 = bbnbm
+    	   * output false
+    	   * 
+    	   * */
+    	   System.out.println("Isomorphic Strings");
+    	   String s1 = "add";System.out.println(s1);
+    	   String s2 = "egg";System.out.println(s2);
+    	   Map<Character,Character> ym = new HashMap<>();
+    	   if(s1.length()!=s2.length()){
+    	   	System.out.println(false);
+    	   }
+    	   else{
+    	   		for(int i = 0;i<s1.length();i++){
+    	   			ym.put(s1.charAt(i), s2.charAt(i));
+    	   		}
+    	   		System.out.println(ym);
+    	   		//replacing the letters with their pair from the hashmap
+    	   		String prox = "";
+    	   		for(int i = 0;i<s1.length();i++){
+    	   			prox+=ym.get(s1.charAt(i));
+    	   		}
+    	   		if(prox.equals(s2)){
+    	   			System.out.println(true);
+    	   		}else{
+    	   			System.out.println(false);
+    	   		}
+    	   }
+    	   System.out.println();
+
+
+			//Rotate String
+			/**
+			 * 
+			 * Input : s = "abcde" , goal = "cdeab"
+
+				Output : true (After two shifts to the left)
+			 * 
+			 * Input : s = "abcde" , goal = "adeac"
+
+				Output : false
+			 * 
+			 * */    	   
+			 System.out.println("Rotate String");
+			 String ss = "abcde";System.out.println(ss);
+			 String goal = "adeac";System.out.println(goal);
+			 if(ss.equals(goal)){
+			 	System.out.println(true);
+			 }
+			 else{
+			 		int times = ss.length();
+				 boolean par = true;
+				 while(times>0){
+				 	String neo = "";
+				 	for(int i = 1;i<ss.length();i++){
+				 		neo+=ss.charAt(i);
+				 	}
+				 	neo+=ss.charAt(0);
+				 	if(neo.equals(goal)){
+				 		System.out.println(true);
+				 		par = false;
+				 		break;
+				 	}
+				 	ss = neo;
+				 	times--;
+				 }
+				 if(par == true){
+				 	System.out.println(false);
+				 }
+			 }
+			 //optimal Solution
+			 /*
+					 if (s.length() != goal.length()) {
+				            return false; 
+				        }
+				        // Try all possible rotations of s
+				        for (int i = 0; i < s.length(); i++) {
+				            String rotated = s.substring(i) + s.substring(0, i); 
+				            if (rotated.equals(goal)) {
+				                return true;  // Return true if a match is found
+				            }
+				        }
+				        return false;  
+
+			 */
+			 //best solution
+			 /*
+				public boolean rotateString(String s, String goal) {
+			        if (s.length() != goal.length()) {
+			            return false;  
+			        }
+			        String doubledS = s + s;  // Concatenate s with itself
+			        return doubledS.contains(goal);  // Check if goal is a substring of s + s
+			    }
+			 */
+			
+
 
 
 
