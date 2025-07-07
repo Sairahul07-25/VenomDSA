@@ -282,7 +282,82 @@ public class StringBasics {
 
 
 
+			  //sort character by frequency
+			  System.out.println("Sort Character by Frequency");
+			  /**
+			   * 
+			   * 
+			   * s = "tree"
+			   * output =  ['e', 'r', 't' ]
+			   * 
+			   * s = "raaaaaj";
+			   * ['a' , 'j', 'r' ]
+			   * 
+			   * s = "bbccddaaa";
+			   * ['a', 'b', 'c', 'd']
+			   * 
+			   * if two characters have same frequency, then sort it in alphabetical order
+			   * 
+			   * */
+			   	//My solution.
+			   String sr = "tree";
+			   Map<Character, Integer> um = new HashMap<>();
+			   for(int i = 0;i<sr.length();i++){
+			   	um.put(sr.charAt(i),um.getOrDefault(sr.charAt(i),0)+1);
+			   }
+			   System.out.println(um);
 
+			   	ArrayList<Character> ls = new ArrayList<>();
+			   	for(char c : um.keySet()){
+			   		ls.add(c);
+			   	}
+			   	char[] sar = new char[ls.size()];
+			   	for(int i = 0;i<ls.size();i++){
+			   		sar[i] = ls.get(i);
+			   	}
+			   	// sorting characters based on frequency and the order of alphabets.
+			   	for(int i = 0;i<ls.size();i++){
+			   		for(int j = 0;j<ls.size();j++){
+			   			if(um.get(sar[i])>um.get(sar[j])){
+			   				char tm = sar[i];
+			   				sar[i] = sar[j];
+			   				sar[j] = tm;
+			   			}
+			   			if(um.get(sar[i]) == um.get(sar[j])){
+			   				int n = sar[i]-'0';
+			   				int u = sar[j] -'0';
+			   				if(n<u && i>j){
+			   					char to = sar[i];
+			   					sar[i] = sar[j];
+			   					sar[j] = to;
+			   				}
+			   				else if(n<u && i<j){
+			   					continue;
+			   				}
+			   				else if(n>u && i>j){
+			   					continue;
+			   				}
+			   				else if(n>u && i<j)	{
+			   						char tumm = sar[i];
+			   						sar[i] = sar[j];
+			   						sar[j] = tumm;
+			   				}
+			   			}
+			   		}
+			   	}
+			   	System.out.println(Arrays.toString(sar));
+			   	System.out.println();
+			   	//optimal
+			   	System.out.println("Optimal solution for it");
+			   	ls.sort((a,b)->{
+			   			if(!um.get(a).equals(um.get(b))){
+			   				return um.get(b)-um.get(a);
+			   			}
+			   			else{
+			   				return a-b;
+			   			}
+			   	});
+			   	System.out.println(ls);
 
 
     }
