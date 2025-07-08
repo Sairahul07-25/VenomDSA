@@ -260,6 +260,7 @@ public class recursionBasics {
         int[] sortcheckarr = {4,6,2,1,7};
         System.out.println(Arrays.toString(sortcheckarr));
         System.out.println(checkSorted(sortcheckarr,sortcheckarr.length-1));
+        System.out.println();
 
 
         //9 9 9 9 9 9 9 9 9
@@ -268,6 +269,7 @@ public class recursionBasics {
         int Num = 529;System.out.println(Num);
         int ans = sumofDigits(Num);
         System.out.println(ans);
+        System.out.println();
 
         //10 10 10 10 10 10 10 10 10
         // fibonacci series
