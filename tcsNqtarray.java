@@ -310,10 +310,28 @@ public class arrayProblems {
        System.out.println();
 
 
-
-       //Sort an array according to the order defined by another array
+      //Sort an array according to the order defined by another array
        System.out.println("Sort an array according to the order defined by another array");
-       
+       int[] rlarr = {2,3,1,3,2,4,6,7,9,2,19};
+       int[] toarr = {2,1,4,3,9,6};
+
+       ArrayList<Integer> yiu = new ArrayList<>();
+       ArrayList<Integer> tuv = new ArrayList<>();
+       for(var er:rlarr){
+            yiu.add(er);
+       }
+        
+        for(int i = 0;i<toarr.length;i++){
+            while(yiu.contains(toarr[i])){
+                tuv.add(toarr[i]);
+                yiu.remove((Integer)toarr[i]);
+            }
+        }
+        System.out.println(tuv);
+        for(var er:yiu){
+            tuv.add(er);
+        }
+        System.out.println(tuv); 
 
 
     }

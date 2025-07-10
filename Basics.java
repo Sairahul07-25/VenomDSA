@@ -77,6 +77,8 @@ public class Basics {
         String s = "Rahul";
         System.out.println(s.charAt(s.length()-1));
 
+        
+
     }
 
 }
